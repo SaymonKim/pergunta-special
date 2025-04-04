@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pergunta Importante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #ffebee;
+        }
+        h1 {
+            color: #d32f2f;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        #sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #sim:hover {
+            background-color: #45a049;
+        }
+        #nao {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        #nao:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vamos transar gostosinho? 😏</h1>
+    <button id="sim" onclick="enviarMensagem()">SIM</button>
+    <button id="nao" onmouseover="fugir()">NÃO</button>
+
+    <script>
+        function fugir() {
+            const btnNao = document.getElementById("nao");
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            btnNao.style.left = x + "px";
+            btnNao.style.top = y + "px";
+        }
+
+        function enviarMensagem() {
+            const mensagem = encodeURIComponent("Sim, vamos transar gostosinho. 😏");
+            window.location.href = "https://wa.me/5551985504493?text=" + mensagem;
+        }
+    </script>
+</body>
+</html>
